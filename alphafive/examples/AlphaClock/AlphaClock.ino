@@ -2,9 +2,9 @@
 
  AlphaClock.ino 
  
- -- Alpha Clock Five Firmware, version 2.2 --
+ -- Alpha Clock Five Firmware, version 2.3 --
  
- Version 2.2.0 - November 15, 2019
+ Version 2.3.0 - December 14, 2020
  Copyright (c) 2019 Windell H. Oskay.  All right reserved.
  http://www.evilmadscientist.com/
  
@@ -846,10 +846,10 @@ void DisplayWordSequence (byte sequence)
     else
       wordSequence = 0;
     break; 
-  case 5: //Display "VER22" " LED " "TEST "  // Display software version number, 2.2
+  case 5: //Display "VER23" " LED " "TEST "  // Display software version number, 2.3
 
     if (wordSequenceStep == 1){
-      DisplayWord ("VER22", 2000);
+      DisplayWord ("VER23", 2000);
       DisplayWordDP("___1_");
     }
     else if (wordSequenceStep == 3)

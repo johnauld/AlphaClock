@@ -3,8 +3,8 @@
  
  Part of the Alpha Five library for Arduino
  
-Version 2.2.0 - November 15, 2019
- Copyright (c) 2019 Windell H. Oskay.  All right reserved.
+Version 2.3.0 - December 14, 2020
+ Copyright (c) 2020 Windell H. Oskay.  All right reserved.
  http://www.evilmadscientist.com/
  
  This library is free software: you can redistribute it and/or modify
