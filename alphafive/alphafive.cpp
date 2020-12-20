@@ -913,8 +913,23 @@ void a5Init (void)
     
     TIMSK2 = (1<<TOIE2);	// Begin interrupt on timer overflow compare match
     
+#ifdef USE_PPS
+    cli();
+    PCICR |= PPS_PCIE;      // Enable interrupts for chosen port
+    PPS_PCMSK |= PPS_PCINT; // Enable port
+    sei();
+#endif // USE_PPS
 }
 
+#ifdef USE_PPS
+ISR(PPS_VECT)
+{
+    static int i = 0;
+
+    if ( PPS_REG & _BV(PPS_PIN) )
+        a5nightLight((++i&1) ? 200 : 0);    // For now just toggle nightlight
+}
+#endif // USE_PPS
 
 ISR(TIMER2_OVF_vect)
 {

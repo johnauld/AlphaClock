@@ -57,6 +57,18 @@
 extern int8_t a5_OSB[];
 extern int8_t a5_FadeStage;
 
+// Uncomment to attempt to sync to a 1PPS signal from a GPS receiver
+#define USE_PPS
+
+#ifdef USE_PPS
+// Choose registers and masks depending on port. In this case, PD4
+#define PPS_PIN     (PIND4)
+#define PPS_REG     (PIND)
+#define PPS_PCIE    (_BV(PCIE3))    // 0 == port A, 1 == B, 2 == C, 3 == D
+#define PPS_PCMSK   (PCMSK3)        // As above
+#define PPS_VECT    (PCINT3_vect)
+#define PPS_PCINT   (_BV(PCINT28))  // Interrupt corresponding to PPS input pin
+#endif
 
 // Starting offset of our ASCII array:
 #define a5_asciiOffset 32
